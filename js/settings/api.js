@@ -1,0 +1,1 @@
+export const url = "https://helbusprojectexam2.herokuapp.com/api/articles?populate=*";

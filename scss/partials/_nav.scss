@@ -1,0 +1,119 @@
+header {
+    height: 75px;
+    background-color: white;
+    padding: 0 20px 0 0;
+
+    @include breakpoint(large) {
+        height: 100px;
+        padding: 0 17%;
+    }
+
+    .logo {
+        height: 70px;
+        width: 185px;
+
+        @include breakpoint(large) {
+            height: 100px;
+            width: auto;
+        }
+    }
+
+    .login,
+    .label-hamburger {
+        position: relative;
+        float: right;
+        font-size: 23px;
+        margin-top: 20px;
+        margin-left: 15px;
+        
+    }
+
+    .label-hamburger,
+    .login-mobile {
+        @include breakpoint(large) {
+            display: none;
+        }
+    }
+
+    .login {
+        color: black;
+
+        @include breakpoint(large) {
+            margin-top: 1.5em;
+        }
+    }
+
+    .login-desktop {
+        @media (max-width: 1020px) {
+            display: none;
+        }
+
+    }
+
+    #hamburger-menu {
+        display: none;
+
+    }
+
+
+    #hamburger-menu:checked~nav {
+        display: block;
+    }
+
+    @include breakpoint(large) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+nav {
+    display: none;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+
+    @include breakpoint(large) {
+        display: block;
+        position: static;
+    }
+
+}
+
+
+ul {
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+
+    @include breakpoint(large) {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+
+    li {
+        margin-top: 1em;
+        margin-bottom: 2em;
+        margin-right: 3em;
+
+        @include breakpoint(large) {
+            margin-top: 2.3em;
+            margin-bottom: 0;
+        }
+    }
+
+
+    li a {
+        color: black;
+        font-weight: 700;
+        text-decoration: none;
+        font-family: $font-headings;
+    }
+
+    li a:hover {
+        color: getColour(dark-yellow);
+        transition: 0.2s;
+    }
+}

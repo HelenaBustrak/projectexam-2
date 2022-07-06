@@ -1,0 +1,27 @@
+$font-primary: "Dosis", sans-serif;
+$font-headings: "Kanit", sans-serif;
+
+$dekstop-size: 920px;
+
+$colours: (
+    primary: #460063,
+    secondary: #F2008F,
+    dark-yellow: #EBA401,
+    grey: #8C8C8C,
+);
+
+@function getColour($colour) {
+    @return map-get($colours, $colour);
+}
+
+$breakpoints: (
+    small: 320px,
+    medium: 640px,
+    large: 1020px,
+);
+
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+        @content;
+    }
+}

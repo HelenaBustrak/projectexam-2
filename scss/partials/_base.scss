@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: rgb(70,0,99);
+    background: linear-gradient(45deg, rgba(70,0,99,1) 0%, rgba(255,0,151,1) 100%);
+    margin: 0;
+    font-family: $font-primary;
+}
+
+.wrapper {
+    flex: 1 0 auto;
+
+}
+
+main {
+    padding: 0 5%;
+    @include breakpoint(large) {
+        padding: 0 18%;
+    }
+}
