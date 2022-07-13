@@ -11,10 +11,7 @@ export function searchArticles(articles) {
             return true;
           } 
         });
-
-
-      
-      
+        
         renderArticles(filteredArticles);
       
       };

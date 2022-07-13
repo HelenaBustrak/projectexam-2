@@ -38,7 +38,6 @@ async function doLogin(username, password) {
     try {
         const response = await fetch(loginURL, options);
         const json = await response.json();
-        console.log(json);
 
         if (json.user) {
             saveToken(json.jwt);
@@ -54,6 +53,6 @@ async function doLogin(username, password) {
         
     }
     catch(error) {
-        console.log(error);
+        displayMessage("error", "An error occured", ".message-container");
     }
 }

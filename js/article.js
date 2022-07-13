@@ -1,5 +1,6 @@
 import { getUsername } from "./utils/storage.js";
 import createLoginButton from "./components/loginButton.js";
+import displayMessage from "./components/displayMessage.js";
 
 createLoginButton();
 const articleContainer = document.querySelector(".article");
@@ -41,6 +42,6 @@ const articleUrl =
                                     <h5>Written by: Helena Bustrak</h5>
                                     <p>${article.attributes.Text}</p>`;
   } catch (error) {
-    console.log(error);
+    displayMessage("error", "An error occured", ".message-container");
   }
 })();

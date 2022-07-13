@@ -50,7 +50,6 @@ async function postArticle(title, description, date, text) {
     const data = JSON.stringify({data: {Title: title, Description: description, Date: date, Text: text}});
 
     const token = getToken();
-    console.log(token);
 
     const options = {
         method: 'POST',
@@ -65,7 +64,7 @@ async function postArticle(title, description, date, text) {
         const json = await response.json();
 
         if (json.data.attributes.Title) {
-            displayMessage("success", "Product created", ".message-container");
+            displayMessage("success", "Article Posted!", ".message-container");
             postForm.reset();
         }
 
@@ -73,7 +72,6 @@ async function postArticle(title, description, date, text) {
             displayMessage("error", json.message, ".message-container");
         }
 
-        console.log(json)
     } catch(error) {
         console.log(error);
         displayMessage("error", "An error occured", ".message-container");

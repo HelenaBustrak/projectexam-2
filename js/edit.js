@@ -94,7 +94,7 @@ async function updateProduct(title, description, date, text, id) {
         const json = await response.json();
 
         if(json.data.attributes.updatedAt) {
-            displayMessage("success", "Product updated", ".message-container");
+            displayMessage("success", "Article updated", ".message-container");
             
         }
 

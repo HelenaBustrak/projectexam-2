@@ -35,7 +35,7 @@ addContainer.innerHTML = addPostLink;
     
     console.log(json);
   } catch (error) {
-    console.log(error);
+    displayMessage("error", "An error occured", ".message-container");
   }
 }
 
