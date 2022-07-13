@@ -1,0 +1,106 @@
+.upper-section {
+    text-align: center;
+
+    @include breakpoint(large) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 1em;
+        text-align: left;
+
+    }
+}
+
+.image-container {
+    background-image: url("../../images/home-page-media.png");
+    height: 230px;
+    width: 250px;
+    background-position: center;
+    background-size: cover;
+    margin: 1em auto;
+
+    @include breakpoint(medium) {
+        height: 350px;
+        width: 350px;
+    }
+
+    @include breakpoint(large) {
+        margin-top: 5em;
+    }
+
+    @media (min-width: 1300px) {
+        margin-top: 0;
+        height: 500px;
+        width: 500px;
+    }
+}
+
+.search-container {
+    display: flex;
+    background-color: getColour(primary);
+    border-radius: 21px;
+    padding: 0.3em;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 2em;
+
+    @include breakpoint(large) {
+        margin: 0;
+        margin-top: 2em;
+
+    }
+
+    #searchbar {
+        border: none;
+        background-color: getColour(primary);
+        color: white;
+        height: 40px;
+
+    }
+
+    .search-icon {
+        background-color: white;
+        color: getColour(dark-yellow);
+        font-size: 18px;
+        padding: 0.5em;
+        border-radius: 21px;
+        margin-right: 1em;
+        width: 40px;
+    }
+
+    #searchbar::placeholder {
+        font-family: $font-primary;
+        font-size: 18px;
+        color: white;
+    }
+
+    #searchbar:focus {
+        outline: none;
+        
+    }
+}
+
+.articles-heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+
+    @include breakpoint(large) {
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center; 
+    }
+    
+    .add-article {
+        text-decoration: none;
+        color: white;
+        font-family: $font-headings;
+        
+    }
+
+    .add-article:hover {
+        text-decoration: underline;
+    }
+}
+

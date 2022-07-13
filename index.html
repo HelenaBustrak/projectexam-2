@@ -15,43 +15,43 @@
     <body>
         <div class="wrapper">
             <header>
-            
                 <a href="index.html"><img class="logo" src="images/front-end-wiki-logo.png" alt="Front-end Wiki"></a>
-                <label class="label-hamburger" for="hamburger-menu"><i class="fas fa-bars"></i></label>
-                <input type="checkbox" id="hamburger-menu">
-                <a  class="login login-mobile" href="login.html"><i class="fa-solid fa-circle-user"></i></a>     
-                
-                <nav>
-                    <ul>
-                        <li><a href="html-articles.html">HTML</a></li>
-                        <li><a href="css-articles.html">CSS</a></li>
-                        <li><a href="javascript-articles.html">JavaScript</a></li>
-                    </ul>
-                </nav>
-                <a  class="login login-desktop" href="login.html"><i class="fa-solid fa-circle-user"></i></a>
+                <div class="login-container">
+                </div>  
             </header>
             <main>
-                <section>
-                    <h1 class="homeheading">Search Our Library</h1>
-                    <p>Will write text later</p>
-                    <input type="search" id="searchbar" placeholder="Search here">
-                    <i class="fas fa-magnifying-glass"></i>
+                <section class="upper-section">
+                    <div>
+                        <h1 class="home-heading">Search Our Library</h1>
+                        <p class="home-paragraph">Front-End Wiki is a wiki website create
+                             to store all information a Front-End Developer should need. balbalkbnsnjdkhsjkhdjkah</p>
+                        <div class="search-container">
+                            <i class="search-icon fas fa-magnifying-glass"></i>
+                            <input type="search" id="searchbar" placeholder="Search article">
+                            
+                        </div>
+                    </div>
+                    <div class="image-container"></div>
                 </section>
-                
                 <section>
-                    <h2>Featured Articles</h2>
+                    <div  class="articles-heading-container">
+                        <h2>Articles</h2>
+                        <div class="add-article-container"></div>
+                    </div>
                     <div class="articles">
-                        Loading Articles..
+                        <div class="spinner"></div>
+                        <div class="spinner"></div>
+                        <div class="spinner"></div>
+                        
                     </div>
                 </section>
-    
-    
             </main>
         </div>
         <footer>
-            <div>Helena Bustrak</div>
+            <div>
+                <h3>Created by Helena Bustrak</h3>
+            </div>
         </footer>
-        
     <script src="js/index.js" type="module"></script>
     </body>
 </html>

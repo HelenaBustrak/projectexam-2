@@ -1,0 +1,39 @@
+.button {
+    display: block;
+    background-color: getColour(secondary);
+    text-decoration: none;
+    color: white;
+    padding: 0.3em 1em;
+    border-radius: 21px;
+    width: 130px;
+    text-align: center;
+    font-weight: 400;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: getColour(dark-yellow);
+}
+
+.button-large {
+    margin-top: 1em;
+    padding: 0 1em;
+    height: 40px;
+    width: 200px;
+    font-size: 18px;
+
+}
+
+#delete {
+    background-color: red;
+}
+
+.button-container {
+    @include breakpoint(large) {
+        display: flex;
+        gap: 2em;
+      }
+    
+}

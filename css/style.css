@@ -8,6 +8,7 @@ html, body {
 }
 
 body {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,6 +20,8 @@ body {
   background: linear-gradient(45deg, #460063 0%, #ff0097 100%);
   margin: 0;
   font-family: "Dosis", sans-serif;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .wrapper {
@@ -37,7 +40,39 @@ main {
   }
 }
 
+.spinner {
+  margin: 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 9px solid;
+  border-color: #dbdcef;
+  border-right-color: #460063;
+  -webkit-animation: spinner-d3wgkg 1s infinite linear;
+          animation: spinner-d3wgkg 1s infinite linear;
+}
+
+@-webkit-keyframes spinner-d3wgkg {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes spinner-d3wgkg {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 75px;
   background-color: white;
   padding: 0 20px 0 0;
@@ -62,123 +97,98 @@ header .logo {
   }
 }
 
-header .login,
-header .label-hamburger {
-  position: relative;
-  float: right;
-  font-size: 23px;
-  margin-top: 20px;
-  margin-left: 15px;
+.login-container {
+  margin-top: 1.3em;
 }
 
 @media (min-width: 1020px) {
-  header .label-hamburger,
-  header .login-mobile {
-    display: none;
+  .login-container {
+    margin-top: 2em;
   }
 }
 
-header .login {
-  color: black;
-}
-
-@media (min-width: 1020px) {
-  header .login {
-    margin-top: 1.5em;
-  }
-}
-
-@media (max-width: 1020px) {
-  header .login-desktop {
-    display: none;
-  }
-}
-
-header #hamburger-menu {
-  display: none;
-}
-
-header #hamburger-menu:checked ~ nav {
-  display: block;
-}
-
-@media (min-width: 1020px) {
-  header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-nav {
-  display: none;
-  background-color: white;
-  width: 100%;
-  position: absolute;
-  padding: 0;
-}
-
-@media (min-width: 1020px) {
-  nav {
-    display: block;
-    position: static;
-  }
-}
-
-ul {
-  margin: 0;
-  list-style: none;
-  text-decoration: none;
-}
-
-@media (min-width: 1020px) {
-  ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
-  }
-}
-
-ul li {
-  margin-top: 1em;
-  margin-bottom: 2em;
-  margin-right: 3em;
-}
-
-@media (min-width: 1020px) {
-  ul li {
-    margin-top: 2.3em;
-    margin-bottom: 0;
-  }
-}
-
-ul li a {
-  color: black;
-  font-weight: 700;
-  text-decoration: none;
+.login-container .login, .login-container #logout {
   font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
 }
 
-ul li a:hover {
-  color: #EBA401;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+.login-container .fa-circle-user, .login-container .login {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.login-container .fa-circle-user, .login-container .fa-right-from-bracket {
+  display: block;
+  font-size: 21px;
+}
+
+.login-container #logout {
+  border: none;
+  background: none;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1;
+}
+
+@media (min-width: 1020px) {
+  h1 {
+    font-size: 60px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+}
+
+@media (min-width: 1020px) {
+  h2 {
+    font-size: 32px;
+    margin-top: 0;
+  }
 }
 
 h1, h2 {
   color: white;
   font-family: "Kanit", sans-serif;
+  text-align: center;
+}
+
+@media (min-width: 1020px) {
+  h1, h2 {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1020px) {
+  .login-heading {
+    text-align: center;
+  }
+}
+
+.home-paragraph {
+  color: white;
+  font-size: 18px;
+}
+
+@media (min-width: 1020px) {
+  .home-paragraph {
+    font-size: 21px;
+  }
+}
+
+h4 {
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+}
+
+@media (min-width: 1020px) {
+  h4 {
+    font-size: 20px;
+  }
 }
 
 .articles {
@@ -189,6 +199,7 @@ h1, h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 1.5em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -196,27 +207,509 @@ h1, h2 {
 
 @media (min-width: 1020px) {
   .articles {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  width: 80%;
+  padding: 1.5em;
+  max-width: 400px;
+}
+
+@media (min-width: 1020px) {
+  .card {
+    height: 300px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1700px) {
+  .card {
+    height: 260px;
+  }
+}
+
+.card .card-paragraph {
+  color: #460063;
+}
+
+@media (min-width: 1020px) {
+  .card .card-paragraph {
+    height: 100px;
+    overflow: scroll;
+  }
+}
+
+@media (min-width: 1700px) {
+  .card .card-paragraph {
+    height: 100px;
+    overflow: hidden;
+  }
+}
+
+.card .card-date {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.article {
+  position: relative;
+  border-radius: 12px;
+  margin: 2em 0;
+  background-color: white;
+  padding: 1.2em;
+}
+
+@media (min-width: 1020px) {
+  .article {
+    max-width: 650px;
+    margin: 2em auto;
+    padding: 2em;
+  }
+}
+
+.article h1 {
+  margin: 0;
+  color: black;
+  text-align: left;
+}
+
+.article h5 {
+  margin-top: 0;
+  color: #460063;
+}
+
+.article .edit {
+  position: absolute;
+  top: 1em;
+  right: 2em;
+  text-decoration: none;
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  color: #F2008F;
+  font-size: 18px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (min-width: 1020px) {
+  .article .edit {
+    font-size: 23px;
+  }
+}
+
+.article .edit:hover {
+  color: #460063;
+}
+
+.article p {
+  margin-top: 3em;
+}
+
+@media (min-width: 1020px) {
+  .article p {
+    font-size: 18px;
+  }
+}
+
+.message {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid grey;
+  color: grey;
+}
+
+.message.error {
+  border-color: red;
+  color: white;
+  background: red;
+}
+
+.message.warning {
+  border-color: orange;
+  color: white;
+  background: orange;
+}
+
+.message.success {
+  border-color: green;
+  color: white;
+  background: green;
+}
+
+.edit-form {
+  display: none;
+}
+
+.upper-section {
+  text-align: center;
+}
+
+@media (min-width: 1020px) {
+  .upper-section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -webkit-column-gap: 1em;
+            column-gap: 1em;
+    text-align: left;
+  }
+}
+
+.image-container {
+  background-image: url("../../images/home-page-media.png");
+  height: 230px;
+  width: 250px;
+  background-position: center;
+  background-size: cover;
+  margin: 1em auto;
+}
+
+@media (min-width: 640px) {
+  .image-container {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .image-container {
+    margin-top: 5em;
+  }
+}
+
+@media (min-width: 1300px) {
+  .image-container {
+    margin-top: 0;
+    height: 500px;
+    width: 500px;
+  }
+}
+
+.search-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #460063;
+  border-radius: 21px;
+  padding: 0.3em;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+@media (min-width: 1020px) {
+  .search-container {
+    margin: 0;
+    margin-top: 2em;
+  }
+}
+
+.search-container #searchbar {
+  border: none;
+  background-color: #460063;
+  color: white;
+  height: 40px;
+}
+
+.search-container .search-icon {
+  background-color: white;
+  color: #EBA401;
+  font-size: 18px;
+  padding: 0.5em;
+  border-radius: 21px;
+  margin-right: 1em;
+  width: 40px;
+}
+
+.search-container #searchbar::-webkit-input-placeholder {
+  font-family: "Dosis", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.search-container #searchbar:-ms-input-placeholder {
+  font-family: "Dosis", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.search-container #searchbar::-ms-input-placeholder {
+  font-family: "Dosis", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.search-container #searchbar::placeholder {
+  font-family: "Dosis", sans-serif;
+  font-size: 18px;
+  color: white;
+}
+
+.search-container #searchbar:focus {
+  outline: none;
+}
+
+.articles-heading-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 1020px) {
+  .articles-heading-container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
-.articles .article {
-  background-color: white;
-  border-radius: 10px;
-  width: 80%;
+.articles-heading-container .add-article {
+  text-decoration: none;
+  color: white;
+  font-family: "Kanit", sans-serif;
 }
 
-.article__imageContainer {
-  max-height: 300px;
-  overflow: hidden;
+.articles-heading-container .add-article:hover {
+  text-decoration: underline;
 }
 
-.article__imageContainer .article__image {
-  border-radius: 10px 10px 0 0;
-  width: 100%;
-  height: 100%;
+.button {
+  display: block;
+  background-color: #F2008F;
+  text-decoration: none;
+  color: white;
+  padding: 0.3em 1em;
+  border-radius: 21px;
+  width: 130px;
+  text-align: center;
+  font-weight: 400;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #EBA401;
+}
+
+.button-large {
+  margin-top: 1em;
+  padding: 0 1em;
+  height: 40px;
+  width: 200px;
+  font-size: 18px;
+}
+
+#delete {
+  background-color: red;
+}
+
+@media (min-width: 1020px) {
+  .button-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 2em;
+  }
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5em;
+  background-color: black;
+}
+
+footer div {
+  color: white;
+  height: 150px;
+}
+
+footer h3 {
+  margin-top: 3em;
+}
+
+.login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+}
+
+.edit-form {
+  display: none;
+}
+
+.login-form-container {
+  border-bottom: 3px solid white;
+  width: 90%;
+  max-width: 500px;
+  padding: 0.5em;
+  padding-bottom: 0.2em;
+}
+
+.login-form-container input {
+  border: none;
+  background: none;
+  height: 30px;
+  color: white;
+  font-size: 21px;
+  font-family: "Dosis", sans-serif;
+}
+
+.login-form-container input:focus {
+  outline: none;
+}
+
+.login-form-container input::-webkit-input-placeholder,
+.login-form-container .fa-solid {
+  font-size: 21px;
+  color: white;
+}
+
+.login-form-container input:-ms-input-placeholder,
+.login-form-container .fa-solid {
+  font-size: 21px;
+  color: white;
+}
+
+.login-form-container input::-ms-input-placeholder,
+.login-form-container .fa-solid {
+  font-size: 21px;
+  color: white;
+}
+
+.login-form-container input::placeholder,
+.login-form-container .fa-solid {
+  font-size: 21px;
+  color: white;
+}
+
+.login-form-container input::-webkit-input-placeholder {
+  font-family: "Dosis", sans-serif;
+}
+
+.login-form-container input:-ms-input-placeholder {
+  font-family: "Dosis", sans-serif;
+}
+
+.login-form-container input::-ms-input-placeholder {
+  font-family: "Dosis", sans-serif;
+}
+
+.login-form-container input::placeholder {
+  font-family: "Dosis", sans-serif;
+}
+
+.login-form-container .fa-solid {
+  margin-right: 1em;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.5em;
+}
+
+@media (min-width: 1020px) {
+  .form {
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+  }
+}
+
+.form input {
+  height: 30px;
+}
+
+.form input:focus, .form textarea:focus {
+  outline: 2px solid #EBA401;
+}
+
+.form input, .form textarea {
+  font-size: 18px;
+  font-family: "Dosis", sans-serif;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+}
+
+.form #title, .form #description, .form #text {
+  min-width: 250px;
+}
+
+@media (min-width: 640px) {
+  .form #title, .form #description, .form #text {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .form #title, .form #description, .form #text {
+    width: 500px;
+  }
+}
+
+.form #date {
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.form label {
+  display: block;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 0.3em;
 }
 /*# sourceMappingURL=style.css.map */

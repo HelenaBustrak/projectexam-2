@@ -7,12 +7,15 @@ html, body {
 }
 
 body {
+    height: 100%;
     display: flex;
     flex-direction: column;
     background: rgb(70,0,99);
     background: linear-gradient(45deg, rgba(70,0,99,1) 0%, rgba(255,0,151,1) 100%);
     margin: 0;
     font-family: $font-primary;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .wrapper {
@@ -26,3 +29,20 @@ main {
         padding: 0 18%;
     }
 }
+
+.spinner {
+    margin: 0 auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 9px solid;
+    border-color: #dbdcef;
+    border-right-color: getColour(primary);
+    animation: spinner-d3wgkg 1s infinite linear;
+ }
+ 
+ @keyframes spinner-d3wgkg {
+    to {
+       transform: rotate(1turn);
+    }
+ }

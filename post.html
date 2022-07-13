@@ -8,58 +8,45 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet" />
-        <title>Front-End Wiki - Edit</title>
+        <title>Front-End Wiki - Post Article</title>
     </head>
     <body>
         <div class="wrapper">
             <header>
-            
                 <a href="index.html"><img class="logo" src="images/front-end-wiki-logo.png" alt="Front-end Wiki"></a>
                 <div class="login-container">
-                </div>    
-                
+                </div>
             </header>
             <main>
-                <h1>Edit Article</h1>
-                <div class="loading">
-                    
-                </div>
-                <form class="form editForm">
+                <h1>New Article</h1>
+                <form class="form post-form">
                     <div class="message-container"></div>
                     <div>
                         <label for="title">Title</label>
                         <input id="title" />
                     </div>
                     <div>
-                        <input id="id-input" type="hidden" />  
-                      </div>
-                    <div>
                         <label for="description">Description</label>
                         <textarea rows="10" id="description"></textarea>
-                        <div>
+                        <div class="date-container">
                             <label for="date">Date</label>
                             <input type="date" id="date" />
                         </div>
                     </div>
                     <div>
                         <label for="text">Text</label>
-                        <textarea rows="20" id="text"></textarea>
+                        <textarea rows="20"id="text"></textarea>
                     </div>
-                    <div class="button-container">
-                        <button class="button button-large" id="update">Update Article</button>
-                        <div class="delete-container">
-
-                        </div>
-                    </div>
+                    <button class="button button-large">Post article</button>
                 </form>
             </main>
         </div>
+    </div>
         <footer>
             <div>
                 <h3>Created by Helena Bustrak</h3>
             </div>
         </footer>
-        
-    <script src="js/edit.js" type="module"></script>
+    <script src="js/post.js" type="module"></script>
     </body> 
 </html>

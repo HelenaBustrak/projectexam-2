@@ -1,27 +1,105 @@
 .articles {
     display: flex;
     flex-direction: column;
+    gap: 1.5em;
     align-items: center;
 
     @include breakpoint(large) {
-        flex-direction: row;
-    }
-    .article {
-        background-color: white;
-        border-radius: 10px;
-        width: 80%;
-    
-    
-    
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        
     }
 }
 
-.article__imageContainer {
-    max-height: 300px;
-    overflow: hidden;
-    .article__image {
-        border-radius: 10px 10px 0 0;
+.card {
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
+    padding: 1.5em;
+    max-width: 400px;
+
+    @include breakpoint(large) {
+        height: 300px;
         width: 100%;
-        height: 100%;
+        
+    }
+    @media (min-width: 1700px) {
+        height: 260px;
+        
+    }
+
+    .card-paragraph {
+        color: getColour(primary);
+        @include breakpoint(large) {
+            height: 100px;
+            overflow: scroll;
+            
+            
+        }
+        @media (min-width: 1700px) {
+            height: 100px;
+            overflow: hidden;
+            
+            
+        }
+        
+    }
+
+    .card-date {
+        margin-top: 0;
+        font-weight: 400;
     }
 }
+
+.article {
+    position: relative;
+    border-radius: 12px;
+    margin: 2em 0;
+    background-color: white;
+    padding: 1.2em;
+
+    @include breakpoint(large) {
+        max-width: 650px;
+        margin: 2em auto;
+        padding: 2em;
+    }
+
+    h1 {
+        margin: 0;
+        color: black;
+        text-align: left;
+    }
+
+    h5 {
+        margin-top: 0;
+        color: getColour(primary)
+    }
+
+    .edit {
+        position: absolute;
+        top: 1em;
+        right: 2em;
+        text-decoration: none;
+        font-family: $font-headings;
+        font-weight: 600;
+        color: getColour(secondary);
+        font-size: 18px;
+        transition: 0.3s;
+        @include breakpoint(large) {
+            font-size: 23px;
+        }
+    }
+
+    .edit:hover {
+        color: getColour(primary);
+    }
+
+    p {
+        margin-top: 3em;
+
+        @include breakpoint(large) {
+            font-size: 18px;
+        }
+    }
+}
+

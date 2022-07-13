@@ -1,13 +1,25 @@
+import createLoginButton from "./components/loginButton.js";
+import { renderArticles } from "./components/renderArticles.js";
+import { searchArticles } from "./components/searchArticles.js";
 import { url } from "./settings/api.js";
+import { getUsername } from "./utils/storage.js";
 
-const queryString = document.location.search;
+const addContainer = document.querySelector(".add-article-container");
 
-const params = new URLSearchParams(queryString);
+createLoginButton();
 
-(async function getArticles() {
+const username = getUsername();
+let addPostLink = "";
+
+if (username) {
+  addPostLink = `<a  class="add-article" href="post.html"><i class="fa-solid fa-plus"></i> Add Article</a>`;
+}
+
+addContainer.innerHTML = addPostLink;
+
+
+ async function getArticles(articles) {
   const articlesContainer = document.querySelector(".articles");
-
-  
 
   try {
     const response = await fetch(url);
@@ -15,44 +27,16 @@ const params = new URLSearchParams(queryString);
     console.log(json.data);
 
     const articles = json.data;
+
     articlesContainer.innerHTML = "";
 
-    articlesContainer.innerHTML += `<div class="article">
-    <div class="article__imageContainer">
-        <a href=""><img class="article__image" src="${articles[0].attributes.Image.data.attributes.url}"></a>
-    </div>
-    <div class="article__info">
-        <h4>${articles[0].attributes.Title}</h4>
-        <h5>{${articles[0].attributes.Date}}</h5>
-        <p>${articles[0].attributes.Description}</p>
-        <a  class="button" href="">Read More</a>
-    </div>
-</div>
-<div class="article">
-    <div class="article__imageContainer">
-        <a href=""><img class="article__image" src="${articles[2].attributes.Image.data.attributes.url}"></a>
-    </div>
-    <div class="article__info">
-        <h4>${articles[2].attributes.Title}</h4>
-        <h5>{${articles[2].attributes.Date}}</h5>
-        <p>${articles[2].attributes.Description}</p>
-        <a  class="button" href="">Read More</a>
-    </div>
-</div>
-<div class="article">
-    <div class="article__imageContainer">
-        <a href=""><img class="article__image" src="${articles[5].attributes.Image.data.attributes.url}"></a>
-    </div>
-    <div class="article__info">
-        <h4>${articles[5].attributes.Title}</h4>
-        <h5>{${articles[5].attributes.Date}}</h5>
-        <p>${articles[5].attributes.Description}</p>
-        <a  class="button" href="">Read More</a>
-    </div>
-</div>`;
-
+    renderArticles(articles);
+    searchArticles(articles);
+    
     console.log(json);
   } catch (error) {
     console.log(error);
   }
-})();
+}
+
+getArticles();
